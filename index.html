@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agampreet Saini — Research &amp; Systems</title>
+<meta name="description" content="Agampreet Saini — Computer Science researcher who turns messy, high-dimensional signals into legible structure. Peer-reviewed research across IEEE, Springer, NeurIPS, ASH, and ASCO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="spine" aria-hidden="true"></canvas>
+<div class="ambient" id="ambient"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="mark">AS</span><span class="brand-name">Agampreet Saini</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <button class="theme-toggle persist" id="themeToggle" aria-label="Toggle light mode">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="top"></div>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pulse"></span>Computer Science &middot; Machine Learning Research</div>
+    <h1>
+      <span class="reveal-line"><span>Prediction is easy.</span></span>
+      <span class="reveal-line"><span>I build models that can</span></span>
+      <span class="reveal-line"><span><em>explain themselves.</em></span></span>
+    </h1>
+    <p class="lede">I work across language, financial markets, medical imaging, and biology &mdash; four fields, one craft: taking messy, high-dimensional signals and finding the representation that makes them legible.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar <span class="arw">&rarr;</span></a>
+      <a class="btn btn-ghost" href="#research">Read the work</a>
+    </div>
+
+    <!-- LATENT SPACE -->
+    <div class="latent">
+      <div class="latent-frame">
+        <div class="latent-bar">
+          <span class="latent-label">Latent space &middot; every publication, embedded</span>
+          <div class="latent-filters" id="latentFilters">
+            <button class="lf active" data-theme="all">All</button>
+            <button class="lf" data-theme="0">Representation</button>
+            <button class="lf" data-theme="1">Financial</button>
+            <button class="lf" data-theme="2">Clinical</button>
+            <button class="lf" data-theme="3">Biomedical</button>
+          </div>
+        </div>
+        <canvas id="latentCanvas"></canvas>
+        <div class="latent-tip" id="latentTip"></div>
+        <div class="latent-hint">Hover a point to read the paper &middot; filter to re-cluster the space</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT (interpreter evidence-on-hover) -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">01</span><div><div class="sec-title">About</div></div></div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I&rsquo;m a Computer Science graduate from the University of Petroleum and Energy Studies. My work lives wherever data is messy and the truth is buried &mdash; and it spans an
+          <span class="ev" tabindex="0">unusually wide range<span class="ev-pop"><span class="evk">Evidence</span>Publications across sentiment transfer, gold &amp; crypto forecasting, hematologic imaging, sarcoma risk, and spatial transcriptomics.</span></span>
+          of domains held together by a single method.</p>
+        <p>Across all of it I do one thing: take a
+          <span class="ev" tabindex="0">high-dimensional signal<span class="ev-pop"><span class="evk">Evidence</span>Price series, smear images, MRI/PET scans, gene-expression maps &mdash; each reduced to a representation a model, and a human, can reason over.</span></span>
+          and find the representation that makes it legible &mdash; then insist the model can
+          <span class="ev" tabindex="0">show its reasoning<span class="ev-pop"><span class="evk">Evidence</span>Grad-CAM, LIME, and Occlusion Sensitivity in the clinical work; Monte Carlo dropout uncertainty in sarcoma risk stratification.</span></span>.
+        </p>
+        <p>That work has reached
+          <span class="ev" tabindex="0">IEEE, Springer, NeurIPS, ASH, and ASCO<span class="ev-pop"><span class="evk">Evidence</span>IEEE TCSS &amp; OTCON, Springer Discover AI, NeurIPS Imageomics Workshop, ASH 2025, ASCO 2026.</span></span>.
+          Beyond publishing, I mentor undergraduate researchers through the full arc of a project &mdash; from first question to accepted paper.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Education</span><span class="v">B.Tech, Computer Science &mdash; UPES Dehradun</span></div>
+        <div class="fact"><span class="k">CGPA</span><span class="v">8.7 / 10</span></div>
+        <div class="fact"><span class="k">Based in</span><span class="v">Chandigarh, India</span></div>
+        <div class="fact"><span class="k">Focus</span><span class="v">Representation learning &amp; trustworthy ML</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">02</span><div><div class="sec-title">Selected Research</div><div class="sec-sub">Four research themes, one throughline</div></div></div>
+
+    <div class="theme" style="--th:var(--c1)">
+      <div class="theme-head reveal"><span class="theme-tag">Theme I</span><span class="theme-name">Representation Learning &amp; Cross-Domain Generalization</span></div>
+      <div class="stagger">
+        <div class="pub">
+          <div class="pub-idx">01</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1109/TCSS.2025.3625989" target="_blank" rel="noopener">Transfer Learning for Cross-Domain Sentiment Classification via Domain Adaptation</a></div>
+            <div class="pub-meta"><span class="venue">IEEE Trans. Computational Social Systems</span><span class="status">Published &middot; 2025</span></div>
+            <div class="pub-authors">R. K. Singh, <span class="self">A. Saini</span>, E. Cambria, A. Kumar</div>
+            <div class="pub-abs">WBiGe fuses static and contextual embeddings through a hierarchical BiGRU encoder and lightweight CNNs, with class-aware domain alignment and dual-level attention driving continuous adaptation across domains.</div>
+            <div class="pub-metrics"><span class="metric">92.75% peak accuracy</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">02</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1109/ICTACS62700.2024.10840895" target="_blank" rel="noopener">Cross-Domain Knowledge Adaptation Using Iterative Scaling and Language Models</a></div>
+            <div class="pub-meta"><span class="venue">ICTACS 2024 &middot; IEEE</span><span class="status">Published</span></div>
+            <div class="pub-authors">R. K. Singh, P. Sinha, <span class="self">A. Saini</span>, M. K. Sachan</div>
+            <div class="pub-abs">A cross-domain opinion-mining model that isolates and transfers domain-invariant sentiment signals, using tf-idf separation and iterative scaling to bridge source and target under scarce annotation.</div>
+            <div class="pub-metrics"><span class="metric">81.05% accuracy</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme" style="--th:var(--c2)">
+      <div class="theme-head reveal"><span class="theme-tag">Theme II</span><span class="theme-name">Sequential Modeling &amp; Hybrid Architectures for Financial Systems</span></div>
+      <div class="stagger">
+        <div class="pub">
+          <div class="pub-idx">03</div>
+          <div>
+            <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s44163-025-00464-w" target="_blank" rel="noopener">Forecasting Gold Price using Hybrid Deep Neural Network LSTM-Autoencoder</a></div>
+            <div class="pub-meta"><span class="venue">Discover AI &middot; Springer</span><span class="status">Published &middot; 2025</span></div>
+            <div class="pub-authors"><span class="self">A. Saini</span>, R. K. Singh, P. Sinha</div>
+            <div class="pub-abs">A hybrid LSTM&ndash;Autoencoder trained on 24 years of market data captures long-horizon structure while suppressing overfitting, outperforming LSTM, CNN, and LSTM&ndash;CNN baselines across the board.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">04</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1109/OTCON65728.2025.11070792" target="_blank" rel="noopener">Performance Evaluation of Machine and Hybrid Deep Learning Models for Bitcoin Value Forecasting</a></div>
+            <div class="pub-meta"><span class="venue">IEEE OTCON 2025</span><span class="status">Published</span></div>
+            <div class="pub-authors"><span class="self">A. Saini</span>, R. K. Singh, T. Choudhury, V. Jain</div>
+            <div class="pub-abs">A rigorous benchmark of tree ensembles against deep models for minute-wise Bitcoin forecasting, isolating the decisive role of feature engineering on structured financial data.</div>
+            <div class="pub-metrics"><span class="metric">MAE 14.11</span><span class="metric">R² 0.99998</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">05</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1109/ICECET61485.2024.10698514" target="_blank" rel="noopener">Financial Time Series Prediction on Apple Stocks Using Machine and Deep Learning Models</a></div>
+            <div class="pub-meta"><span class="venue">IEEE ICECET 2024</span><span class="status">Published</span></div>
+            <div class="pub-authors"><span class="self">A. Saini</span>, N. Singh, R. K. Singh, M. K. Sachan</div>
+            <div class="pub-abs">Linear Regression, CNN, and LSTM contrasted on Apple stock data, mapping the real trade-off between temporal expressivity and interpretability in live forecasting.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">06</div>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11368137" target="_blank" rel="noopener">A Hybrid Wavelet-GNN-LSTM Framework for Cryptocurrency Forecasting</a></div>
+            <div class="pub-meta"><span class="venue">IEEE CICN 2025</span><span class="status">Published</span></div>
+            <div class="pub-authors"><span class="self">A. Saini</span>, R. K. Singh, P. Sinha</div>
+            <div class="pub-abs">Wavelet decomposition, graph neural networks for inter-asset structure, and LSTM temporal modeling combine into a single pipeline for forecasting volatile, coupled crypto markets.</div>
+            <div class="pub-metrics"><span class="metric">F1 0.9671</span><span class="metric">R² 0.9996</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme" style="--th:var(--c3)">
+      <div class="theme-head reveal"><span class="theme-tag">Theme III</span><span class="theme-name">Interpretable &amp; Uncertainty-Aware AI for Clinical Decision Support</span></div>
+      <div class="stagger">
+        <div class="pub">
+          <div class="pub-idx">07</div>
+          <div>
+            <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0006497125053200" target="_blank" rel="noopener">Field-Level Visual Explanations for Leukocyte Classification: Interpretability in Peripheral Smear Diagnostics</a></div>
+            <div class="pub-meta"><span class="venue">ASH Annual Meeting 2025</span><span class="status">Published</span></div>
+            <div class="pub-authors">M. Saini, <span class="self">A. Saini</span>, J. S. Negi, S. S. M. Vemula</div>
+            <div class="pub-abs">A MobileNetV2 classifier for full-field peripheral smears, augmented with Grad-CAM, LIME, and Occlusion Sensitivity so every prediction traces back to clinically meaningful morphology.</div>
+            <div class="pub-metrics"><span class="metric">97% mean accuracy</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">08</div>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11410826" target="_blank" rel="noopener">Automated Diagnosis of PCOS: A Deep Learning Approach Using Ultrasound Data</a></div>
+            <div class="pub-meta"><span class="venue">Global AI Summit 2025</span><span class="status">Published</span></div>
+            <div class="pub-authors">C. Gupta, L. Agarwal, S. Sharma, R. K. Singh, <span class="self">A. Saini</span>, J. S. Negi</div>
+            <div class="pub-abs">PCause pairs GAN-based synthesis, PCA reduction, and DenseNet-121, then ships as a cross-platform app for early, scalable PCOS screening in underserved settings.</div>
+            <div class="pub-metrics"><span class="metric">93.4% test accuracy</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">09</div>
+          <div>
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">TIP: Explainable Transfer Learning with Controlled Continuous Adaptation for Hematologic Image Analysis</a></div>
+            <div class="pub-meta"><span class="venue">IEEE Trans. Image Processing</span><span class="status review">Under Review</span></div>
+            <div class="pub-authors"><span class="self">A. Saini</span>, E. Cambria, R. K. Singh, J. S. Negi, P. Sinha</div>
+            <div class="pub-abs">TREX-Net &mdash; a trimmed MobileNetV2 with a tri-explainability system for leukemia detection under limited data, sustaining passive human-in-the-loop adaptation without heavyweight compute.</div>
+            <div class="pub-metrics"><span class="metric">98.15% accuracy</span></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">10</div>
+          <div>
+            <div class="pub-title"><a href="https://ascopubs.org/doi/abs/10.1200/JCO.2026.44.16_suppl.e23543" target="_blank" rel="noopener">Uncertainty-Aware Multimodal Imaging for Lung Metastasis Risk Stratification in Extremity Soft-Tissue Sarcoma</a></div>
+            <div class="pub-meta"><span class="venue">ASCO Annual Meeting 2026</span><span class="status">Published</span></div>
+            <div class="pub-authors">M. Saini, <span class="self">A. Saini</span>, E. Cambria</div>
+            <div class="pub-abs">MRI and FDG-PET fused at the representation level with Monte Carlo dropout uncertainty; deferring the least-certain cases measurably lifts retained accuracy in rare-cancer decision support.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme" style="--th:var(--c4)">
+      <div class="theme-head reveal"><span class="theme-tag">Theme IV</span><span class="theme-name">Multimodal &amp; Foundation Models for Biomedical Systems</span></div>
+      <div class="stagger">
+        <div class="pub">
+          <div class="pub-idx">11</div>
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/forum?id=iEqXL74TV4" target="_blank" rel="noopener">Artificial Intelligence for Spatial Transcriptomics: A Scoping Review of Architectures and Models</a></div>
+            <div class="pub-meta"><span class="venue">NeurIPS 2025 Workshop &middot; Imageomics</span><span class="status">Published</span></div>
+            <div class="pub-authors"><span class="self">A. Saini</span>, S. Gandotra, A. Kumar, P. Dutta, T. Ghosal</div>
+            <div class="pub-abs">A systematic map of 40+ deep learning frameworks for spatial transcriptomics, organized by the biological tasks their representations serve and the open road toward foundation models for spatial biology.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-idx">12</div>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11383655" target="_blank" rel="noopener">WellGuide: Bridging AI and Medicine with Biomedical LLMs for Enhanced Health Support</a></div>
+            <div class="pub-meta"><span class="venue">ICPDCSDT 2025</span><span class="status">Published</span></div>
+            <div class="pub-authors">S. Sharma, <span class="self">A. Saini</span></div>
+            <div class="pub-abs">A healthcare support system built on BioMedGPT, weaving clinical NER, conversational memory, and structured patient workspaces into a privacy-conscious biomedical assistant.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">03</span><div><div class="sec-title">Projects</div></div></div>
+    <div class="proj-grid stagger">
+      <a class="proj tilt" href="https://github.com/Agampreet25/aurumpulse-insights" target="_blank" rel="noopener">
+        <div class="proj-name">AurumPulse Insights <span class="arw">&rarr;</span></div>
+        <div class="proj-desc">An emotion-aware gold-price forecasting tool. LSTM + Autoencoder predictions layered with buyer/seller sentiment logic, real-time input, and a Dockerized inference API. Copyright granted under the UPES IP Cell.</div>
+        <div class="proj-stack"><span class="chip">TensorFlow</span><span class="chip">Flask</span><span class="chip">Docker</span><span class="chip">Chart.js</span></div>
+      </a>
+      <a class="proj tilt" href="https://github.com/Agampreet25/chef-code" target="_blank" rel="noopener">
+        <div class="proj-name">Chef&rsquo;s Code <span class="arw">&rarr;</span></div>
+        <div class="proj-desc">An educational compiler that teaches C through cooking metaphors &mdash; macros like <span class="mono">mix()</span> and <span class="mono">bake()</span> compile to GCC-ready C. Full parser, symbol table, and code generation behind a live Flask UI. Registered under the UPES IP Cell.</div>
+        <div class="proj-stack"><span class="chip">C</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">GCC</span></div>
+      </a>
+      <a class="proj tilt" href="https://github.com/Agampreet25/apple-stocks" target="_blank" rel="noopener">
+        <div class="proj-name">iPredict <span class="arw">&rarr;</span></div>
+        <div class="proj-desc">An Apple stock forecaster on Linear Regression and LSTM, with trend decomposition, time-series preprocessing, and feature engineering evaluated on RMSE and MAE.</div>
+        <div class="proj-stack"><span class="chip">Scikit-learn</span><span class="chip">Keras</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span></div>
+      </a>
+      <a class="proj tilt" href="https://github.com/Agampreet25" target="_blank" rel="noopener">
+        <div class="proj-name">More on GitHub <span class="arw">&rarr;</span></div>
+        <div class="proj-desc">Additional experiments across forecasting, interpretable NLP, and applied deep learning. Browse the full set of repositories.</div>
+        <div class="proj-stack"><span class="chip">@Agampreet25</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">04</span><div><div class="sec-title">Experience &amp; Mentorship</div></div></div>
+    <div class="stagger">
+      <div class="exp">
+        <div class="exp-when">Nov 2024 &ndash; Present</div>
+        <div>
+          <div class="exp-role">Undergraduate Research Mentor</div>
+          <div class="exp-org">Independent Academic Mentorship</div>
+          <div class="exp-desc">Guide undergraduates through the full research lifecycle &mdash; problem formulation, literature review, experimental design, implementation, and scientific writing. Several of these collaborations have become published papers.</div>
+        </div>
+      </div>
+      <div class="exp">
+        <div class="exp-when">Jun 2025 &ndash; Jul 2025</div>
+        <div>
+          <div class="exp-role">ML &amp; Data Science Intern</div>
+          <div class="exp-org">Groove Innovations &middot; Remote</div>
+          <div class="exp-desc">Led AutoETL, an ML-powered pipeline carrying live web data all the way to dashboard insight &mdash; real-time ETL, forecasting, and interactive Tableau dashboards. Directed a cross-functional team building an Agentic AI decision pipeline.</div>
+        </div>
+      </div>
+      <div class="exp">
+        <div class="exp-when">2023 &ndash; 2024</div>
+        <div>
+          <div class="exp-role">Community &amp; Outreach</div>
+          <div class="exp-org">Chahak Foundation &middot; Lions Club</div>
+          <div class="exp-desc">Coordinated volunteer teams across educational outreach, women&rsquo;s empowerment, and farmer-welfare programs, and supported environmental initiatives reaching 200+ beneficiaries.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">05</span><div><div class="sec-title">Technical Toolkit</div></div></div>
+    <div class="skill-grid stagger">
+      <div><div class="sk-cat">Languages</div><div class="sk-items">Python &middot; C &middot; JavaScript &middot; HTML/CSS &middot; SQL</div></div>
+      <div><div class="sk-cat">ML &amp; DL Frameworks</div><div class="sk-items">PyTorch &middot; TensorFlow &middot; Scikit-learn &middot; Transformers &middot; NLTK &middot; spaCy</div></div>
+      <div><div class="sk-cat">Data &amp; Tooling</div><div class="sk-items">NumPy &middot; Pandas &middot; Matplotlib &middot; Seaborn &middot; Tableau &middot; Jupyter &middot; Flask</div></div>
+      <div><div class="sk-cat">Systems &amp; Workflow</div><div class="sk-items">Git &middot; GitHub &middot; Docker &middot; Node.js &middot; VS Code</div></div>
+      <div><div class="sk-cat">Core Methods</div><div class="sk-items">Time-Series Forecasting &middot; Feature Engineering &middot; Explainable AI &middot; Domain Adaptation &middot; Uncertainty Quantification</div></div>
+      <div><div class="sk-cat">Research</div><div class="sk-items">Experimental Design &middot; Scientific Writing &middot; Literature Review &middot; Research Mentorship</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid reveal">
+      <div>
+        <div class="foot-h">Let&rsquo;s find the structure<br>in something <em>new.</em></div>
+        <div class="foot-links">
+          <a href="mailto:agampreet342@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://www.linkedin.com/in/agampreet-saini-99a529342/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Agampreet25" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="mono" style="text-align:right; color:var(--slate); font-size:12px;">AS<br>Chandigarh, IN</div>
+    </div>
+    <div class="colophon">&copy; 2026 Agampreet Saini &middot; Designed &amp; built with intent</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
