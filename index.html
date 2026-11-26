@@ -1,338 +1,385 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agampreet Saini — Research &amp; Systems</title>
-<meta name="description" content="Agampreet Saini — Computer Science researcher who turns messy, high-dimensional signals into legible structure. Peer-reviewed research across IEEE, Springer, NeurIPS, ASH, and ASCO.">
+<title>Agampreet Saini | Affective Computing &amp; NLP</title>
+<meta name="description" content="Agampreet Saini, NLP engineer and research intern with the SenticNet team at NTU Singapore, working on affective computing and emotion modelling. Founder of Symbianthro Labs.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Silkscreen&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<canvas id="spine" aria-hidden="true"></canvas>
-<div class="ambient" id="ambient"></div>
 
-<nav id="nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top"><span class="mark">AS</span><span class="brand-name">Agampreet Saini</span></a>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><img class="pixel" src="assets/avatar.png" alt=""><span>Agampreet Saini</span></a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <button class="theme-toggle persist" id="themeToggle" aria-label="Toggle light mode">
-        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-      </button>
+      <a href="#about" data-say="Off to About!">About</a>
+      <a href="#research" data-say="Off to Research!">Research</a>
+      <a href="#projects" data-say="Off to Projects!">Projects</a>
+      <a href="#experience" data-say="Off to Experience!">Experience</a>
+      <a href="#contact" data-say="Off to Contact!">Contact</a>
     </div>
   </div>
 </nav>
 
-<div id="top"></div>
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow"><span class="pulse"></span>Computer Science &middot; Machine Learning Research</div>
-    <h1>
-      <span class="reveal-line"><span>Prediction is easy.</span></span>
-      <span class="reveal-line"><span>I build models that can</span></span>
-      <span class="reveal-line"><span><em>explain themselves.</em></span></span>
-    </h1>
-    <p class="lede">I work across language, financial markets, medical imaging, and biology &mdash; four fields, one craft: taking messy, high-dimensional signals and finding the representation that makes them legible.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar <span class="arw">&rarr;</span></a>
-      <a class="btn btn-ghost" href="#research">Read the work</a>
-    </div>
-
-    <!-- LATENT SPACE -->
-    <div class="latent">
-      <div class="latent-frame">
-        <div class="latent-bar">
-          <span class="latent-label">Latent space &middot; every publication, embedded</span>
-          <div class="latent-filters" id="latentFilters">
-            <button class="lf active" data-theme="all">All</button>
-            <button class="lf" data-theme="0">Representation</button>
-            <button class="lf" data-theme="1">Financial</button>
-            <button class="lf" data-theme="2">Clinical</button>
-            <button class="lf" data-theme="3">Biomedical</button>
-          </div>
-        </div>
-        <canvas id="latentCanvas"></canvas>
-        <div class="latent-tip" id="latentTip"></div>
-        <div class="latent-hint">Hover a point to read the paper &middot; filter to re-cluster the space</div>
-      </div>
+<!-- HERO -->
+<header id="top" class="wrap hero">
+  <div class="hero-main">
+    <div class="eyebrow"><i class="blink"></i>Player 1 &middot; Affective Computing &amp; NLP</div>
+    <h1>Prediction is easy.<br>I build models that can <em>explain themselves.</em></h1>
+    <p class="lede">I work in affective computing and emotion modelling, studying how emotion is expressed in language, how it&rsquo;s represented, and how it moves. The same craft carries into financial forecasting and clinical imaging, where I take a messy, high-dimensional signal and find the representation that makes it legible.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M2 7h8V4h2v2h2v4h-2v2h-2V9H2z" fill="currentColor"/></svg>
+      </a>
+      <a class="btn" href="#research" data-say="Let&rsquo;s go read!">Press start to read the work</a>
+      <button class="btn" type="button" data-chat-open>Ask me</button>
     </div>
   </div>
+
+  <aside class="char px" aria-label="Profile card">
+    <div class="char-head"><span>Character</span><b>LV 2026</b></div>
+    <div class="char-portrait"><img class="pixel" src="assets/avatar.png" alt="Pixel-art portrait of Agampreet Saini"></div>
+    <div class="stats">
+      <div class="stat"><div class="k">Published</div><div class="v" style="color:var(--t0)" id="statPapers">12</div></div>
+      <div class="stat"><div class="k">Upcoming</div><div class="v" style="color:var(--t3)" id="statReview">3</div></div>
+      <div class="stat"><div class="k">Themes</div><div class="v" style="color:var(--t1)">4</div></div>
+      <div class="stat"><div class="k">Publishers</div><div class="v" style="color:var(--t2)">6</div></div>
+    </div>
+    <div class="char-foot">IEEE &middot; Springer &middot; NeurIPS &middot; ACL &middot; ASH &middot; ASCO</div>
+  </aside>
 </header>
 
-<!-- ABOUT (interpreter evidence-on-hover) -->
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">01</span><div><div class="sec-title">About</div></div></div>
-    <div class="about-grid reveal">
-      <div>
-        <p>I&rsquo;m a Computer Science graduate from the University of Petroleum and Energy Studies. My work lives wherever data is messy and the truth is buried &mdash; and it spans an
-          <span class="ev" tabindex="0">unusually wide range<span class="ev-pop"><span class="evk">Evidence</span>Publications across sentiment transfer, gold &amp; crypto forecasting, hematologic imaging, sarcoma risk, and spatial transcriptomics.</span></span>
-          of domains held together by a single method.</p>
-        <p>Across all of it I do one thing: take a
-          <span class="ev" tabindex="0">high-dimensional signal<span class="ev-pop"><span class="evk">Evidence</span>Price series, smear images, MRI/PET scans, gene-expression maps &mdash; each reduced to a representation a model, and a human, can reason over.</span></span>
-          and find the representation that makes it legible &mdash; then insist the model can
-          <span class="ev" tabindex="0">show its reasoning<span class="ev-pop"><span class="evk">Evidence</span>Grad-CAM, LIME, and Occlusion Sensitivity in the clinical work; Monte Carlo dropout uncertainty in sarcoma risk stratification.</span></span>.
-        </p>
-        <p>That work has reached
-          <span class="ev" tabindex="0">IEEE, Springer, NeurIPS, ASH, and ASCO<span class="ev-pop"><span class="evk">Evidence</span>IEEE TCSS &amp; OTCON, Springer Discover AI, NeurIPS Imageomics Workshop, ASH 2025, ASCO 2026.</span></span>.
-          Beyond publishing, I mentor undergraduate researchers through the full arc of a project &mdash; from first question to accepted paper.</p>
+<!-- RESEARCH MAP -->
+<div class="wrap map-sec">
+  <div class="map-box px">
+    <div class="map-left">
+      <div class="map-bar">
+        <div class="map-label">World map &middot; every paper is a tile</div>
+        <div class="filters" data-size="xs"></div>
       </div>
-      <div class="facts">
-        <div class="fact"><span class="k">Education</span><span class="v">B.Tech, Computer Science &mdash; UPES Dehradun</span></div>
-        <div class="fact"><span class="k">CGPA</span><span class="v">8.7 / 10</span></div>
-        <div class="fact"><span class="k">Based in</span><span class="v">Chandigarh, India</span></div>
-        <div class="fact"><span class="k">Focus</span><span class="v">Representation learning &amp; trustworthy ML</span></div>
+      <div class="map-scroll">
+        <div class="map" id="map" role="group" aria-label="Map of publications by theme"></div>
       </div>
+    </div>
+    <div class="map-detail" aria-live="polite">
+      <div class="md-tag" id="mdTag"></div>
+      <div class="md-title" id="mdTitle"></div>
+      <div class="md-venue" id="mdVenue"></div>
+      <div class="md-abs" id="mdAbs"></div>
+      <div class="md-hint">Hover a tile &middot; filter to highlight a theme</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="wrap">
+  <div class="sec-head"><span class="n">01</span><h2>About</h2></div>
+  <div class="about">
+    <div class="about-text">
+      <p>I&rsquo;m an NLP engineer and a research intern with the <span class="ev" tabindex="0">SenticNet team at NTU Singapore<span class="pop">SenticNet works on affective computing and sentiment analysis at Nanyang Technological University, Singapore.</span></span>. My research sits in <span class="ev" tabindex="0">affective computing<span class="pop">Emotion trajectories in latent space (Findings of EMNLP 2026), cross-domain sentiment transfer (IEEE TCSS), and domain-adaptive opinion mining (ICTACS).</span></span>, modelling how emotion lives in language and how it shifts from one state to the next.</p>
+      <p>Whatever the domain, I do one thing. I take a <span class="ev" tabindex="0">high-dimensional signal<span class="pop">Emotional trajectories, price series, smear images, MRI/PET scans, each reduced to a representation a model, and a human, can reason over.</span></span> and find the representation that makes it legible, then insist the model can <span class="ev" tabindex="0">show its reasoning<span class="pop">Grad-CAM, LIME, and Occlusion Sensitivity in the clinical work, and Monte Carlo dropout uncertainty in sarcoma risk stratification.</span></span>. That work has reached <span class="ev" tabindex="0">IEEE, Springer, NeurIPS, ACL, ASH, and ASCO<span class="pop">IEEE TCSS &amp; OTCON, Springer Discover AI, NeurIPS Imageomics Workshop, Findings of EMNLP 2026, ASH 2025, ASCO 2026.</span></span>.</p>
+      <p>I&rsquo;m also the founder of <a class="lab-link" data-lab-link href="#">Symbianthro Labs</a>. I mentor students through the full arc of a research project, from first question to accepted paper, and Symbianthro is how I want to scale that by bridging the gap between students who want to do research and the mentors who can guide them.</p>
+    </div>
+    <div class="facts">
+      <div class="fact px"><div class="k">Role</div><div class="v">NLP Engineer &middot; Moleculyst</div></div>
+      <div class="fact px"><div class="k">Research</div><div class="v">Research Intern &middot; SenticNet team, NTU Singapore</div></div>
+      <div class="fact px"><div class="k">Founder</div><div class="v"><a class="lab-link" data-lab-link href="#">Symbianthro Labs</a> <span class="soon" data-lab-soon>&middot; site coming soon</span></div></div>
+      <div class="fact px"><div class="k">Focus</div><div class="v">Affective computing &amp; emotion modelling</div></div>
     </div>
   </div>
 </section>
 
 <!-- RESEARCH -->
-<section id="research">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">02</span><div><div class="sec-title">Selected Research</div><div class="sec-sub">Four research themes, one throughline</div></div></div>
+<section id="research" class="wrap">
+  <div class="sec-head split">
+    <div class="sec-head" style="margin:0"><span class="n">02</span><h2>Selected Research</h2></div>
+    <div class="count" id="pubCount"></div>
+  </div>
+  <div class="filters" data-size="sm" style="margin-bottom:36px"></div>
 
-    <div class="theme" style="--th:var(--c1)">
-      <div class="theme-head reveal"><span class="theme-tag">Theme I</span><span class="theme-name">Representation Learning &amp; Cross-Domain Generalization</span></div>
-      <div class="stagger">
-        <div class="pub">
-          <div class="pub-idx">01</div>
-          <div>
-            <div class="pub-title"><a href="https://doi.org/10.1109/TCSS.2025.3625989" target="_blank" rel="noopener">Transfer Learning for Cross-Domain Sentiment Classification via Domain Adaptation</a></div>
-            <div class="pub-meta"><span class="venue">IEEE Trans. Computational Social Systems</span><span class="status">Published &middot; 2025</span></div>
-            <div class="pub-authors">R. K. Singh, <span class="self">A. Saini</span>, E. Cambria, A. Kumar</div>
-            <div class="pub-abs">WBiGe fuses static and contextual embeddings through a hierarchical BiGRU encoder and lightweight CNNs, with class-aware domain alignment and dual-level attention driving continuous adaptation across domains.</div>
-            <div class="pub-metrics"><span class="metric">92.75% peak accuracy</span></div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">02</div>
-          <div>
-            <div class="pub-title"><a href="https://doi.org/10.1109/ICTACS62700.2024.10840895" target="_blank" rel="noopener">Cross-Domain Knowledge Adaptation Using Iterative Scaling and Language Models</a></div>
-            <div class="pub-meta"><span class="venue">ICTACS 2024 &middot; IEEE</span><span class="status">Published</span></div>
-            <div class="pub-authors">R. K. Singh, P. Sinha, <span class="self">A. Saini</span>, M. K. Sachan</div>
-            <div class="pub-abs">A cross-domain opinion-mining model that isolates and transfers domain-invariant sentiment signals, using tf-idf separation and iterative scaling to bridge source and target under scarce annotation.</div>
-            <div class="pub-metrics"><span class="metric">81.05% accuracy</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="pubs" id="pubs">
 
-    <div class="theme" style="--th:var(--c2)">
-      <div class="theme-head reveal"><span class="theme-tag">Theme II</span><span class="theme-name">Sequential Modeling &amp; Hybrid Architectures for Financial Systems</span></div>
-      <div class="stagger">
-        <div class="pub">
-          <div class="pub-idx">03</div>
-          <div>
-            <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s44163-025-00464-w" target="_blank" rel="noopener">Forecasting Gold Price using Hybrid Deep Neural Network LSTM-Autoencoder</a></div>
-            <div class="pub-meta"><span class="venue">Discover AI &middot; Springer</span><span class="status">Published &middot; 2025</span></div>
-            <div class="pub-authors"><span class="self">A. Saini</span>, R. K. Singh, P. Sinha</div>
-            <div class="pub-abs">A hybrid LSTM&ndash;Autoencoder trained on 24 years of market data captures long-horizon structure while suppressing overfitting, outperforming LSTM, CNN, and LSTM&ndash;CNN baselines across the board.</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">04</div>
-          <div>
-            <div class="pub-title"><a href="https://doi.org/10.1109/OTCON65728.2025.11070792" target="_blank" rel="noopener">Performance Evaluation of Machine and Hybrid Deep Learning Models for Bitcoin Value Forecasting</a></div>
-            <div class="pub-meta"><span class="venue">IEEE OTCON 2025</span><span class="status">Published</span></div>
-            <div class="pub-authors"><span class="self">A. Saini</span>, R. K. Singh, T. Choudhury, V. Jain</div>
-            <div class="pub-abs">A rigorous benchmark of tree ensembles against deep models for minute-wise Bitcoin forecasting, isolating the decisive role of feature engineering on structured financial data.</div>
-            <div class="pub-metrics"><span class="metric">MAE 14.11</span><span class="metric">R² 0.99998</span></div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">05</div>
-          <div>
-            <div class="pub-title"><a href="https://doi.org/10.1109/ICECET61485.2024.10698514" target="_blank" rel="noopener">Financial Time Series Prediction on Apple Stocks Using Machine and Deep Learning Models</a></div>
-            <div class="pub-meta"><span class="venue">IEEE ICECET 2024</span><span class="status">Published</span></div>
-            <div class="pub-authors"><span class="self">A. Saini</span>, N. Singh, R. K. Singh, M. K. Sachan</div>
-            <div class="pub-abs">Linear Regression, CNN, and LSTM contrasted on Apple stock data, mapping the real trade-off between temporal expressivity and interpretability in live forecasting.</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">06</div>
-          <div>
-            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11368137" target="_blank" rel="noopener">A Hybrid Wavelet-GNN-LSTM Framework for Cryptocurrency Forecasting</a></div>
-            <div class="pub-meta"><span class="venue">IEEE CICN 2025</span><span class="status">Published</span></div>
-            <div class="pub-authors"><span class="self">A. Saini</span>, R. K. Singh, P. Sinha</div>
-            <div class="pub-abs">Wavelet decomposition, graph neural networks for inter-asset structure, and LSTM temporal modeling combine into a single pipeline for forecasting volatile, coupled crypto markets.</div>
-            <div class="pub-metrics"><span class="metric">F1 0.9671</span><span class="metric">R² 0.9996</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <article class="pub card" data-t="0" data-new>
+      <h3><a href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Learning Structured Emotional Dynamics in Latent Space via Trajectory Modeling and Controlled Transitions</a></h3>
+      <div class="pub-meta"><span class="venue">Findings of ACL &middot; EMNLP 2026</span><span class="status">&middot; Published &middot; 2026</span></div>
+      <div class="authors"><span class="self">A. Saini</span>, B. Abusalameh, R. K. Singh, E. Cambria</div>
+      <div class="abs">Models emotion as trajectories through a learned latent space, with controlled transitions between emotional states.</div>
+    </article>
 
-    <div class="theme" style="--th:var(--c3)">
-      <div class="theme-head reveal"><span class="theme-tag">Theme III</span><span class="theme-name">Interpretable &amp; Uncertainty-Aware AI for Clinical Decision Support</span></div>
-      <div class="stagger">
-        <div class="pub">
-          <div class="pub-idx">07</div>
-          <div>
-            <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0006497125053200" target="_blank" rel="noopener">Field-Level Visual Explanations for Leukocyte Classification: Interpretability in Peripheral Smear Diagnostics</a></div>
-            <div class="pub-meta"><span class="venue">ASH Annual Meeting 2025</span><span class="status">Published</span></div>
-            <div class="pub-authors">M. Saini, <span class="self">A. Saini</span>, J. S. Negi, S. S. M. Vemula</div>
-            <div class="pub-abs">A MobileNetV2 classifier for full-field peripheral smears, augmented with Grad-CAM, LIME, and Occlusion Sensitivity so every prediction traces back to clinically meaningful morphology.</div>
-            <div class="pub-metrics"><span class="metric">97% mean accuracy</span></div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">08</div>
-          <div>
-            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11410826" target="_blank" rel="noopener">Automated Diagnosis of PCOS: A Deep Learning Approach Using Ultrasound Data</a></div>
-            <div class="pub-meta"><span class="venue">Global AI Summit 2025</span><span class="status">Published</span></div>
-            <div class="pub-authors">C. Gupta, L. Agarwal, S. Sharma, R. K. Singh, <span class="self">A. Saini</span>, J. S. Negi</div>
-            <div class="pub-abs">PCause pairs GAN-based synthesis, PCA reduction, and DenseNet-121, then ships as a cross-platform app for early, scalable PCOS screening in underserved settings.</div>
-            <div class="pub-metrics"><span class="metric">93.4% test accuracy</span></div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">09</div>
-          <div>
-            <div class="pub-title"><a href="#" target="_blank" rel="noopener">TIP: Explainable Transfer Learning with Controlled Continuous Adaptation for Hematologic Image Analysis</a></div>
-            <div class="pub-meta"><span class="venue">IEEE Trans. Image Processing</span><span class="status review">Under Review</span></div>
-            <div class="pub-authors"><span class="self">A. Saini</span>, E. Cambria, R. K. Singh, J. S. Negi, P. Sinha</div>
-            <div class="pub-abs">TREX-Net &mdash; a trimmed MobileNetV2 with a tri-explainability system for leukemia detection under limited data, sustaining passive human-in-the-loop adaptation without heavyweight compute.</div>
-            <div class="pub-metrics"><span class="metric">98.15% accuracy</span></div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">10</div>
-          <div>
-            <div class="pub-title"><a href="https://ascopubs.org/doi/abs/10.1200/JCO.2026.44.16_suppl.e23543" target="_blank" rel="noopener">Uncertainty-Aware Multimodal Imaging for Lung Metastasis Risk Stratification in Extremity Soft-Tissue Sarcoma</a></div>
-            <div class="pub-meta"><span class="venue">ASCO Annual Meeting 2026</span><span class="status">Published</span></div>
-            <div class="pub-authors">M. Saini, <span class="self">A. Saini</span>, E. Cambria</div>
-            <div class="pub-abs">MRI and FDG-PET fused at the representation level with Monte Carlo dropout uncertainty; deferring the least-certain cases measurably lifts retained accuracy in rare-cancer decision support.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <article class="pub card" data-t="0">
+      <h3><a href="https://doi.org/10.1109/TCSS.2025.3625989" target="_blank" rel="noopener">Transfer Learning for Cross-Domain Sentiment Classification via Domain Adaptation</a></h3>
+      <div class="pub-meta"><span class="venue">IEEE Trans. Computational Social Systems</span><span class="status">&middot; Published &middot; 2025</span></div>
+      <div class="authors">R. K. Singh, <span class="self">A. Saini</span>, E. Cambria, A. Kumar</div>
+      <div class="abs">WBiGe fuses static and contextual embeddings through a hierarchical BiGRU encoder and lightweight CNNs, with class-aware domain alignment and dual-level attention driving continuous adaptation across domains.</div>
+      <div class="metrics"><span>92.75% peak accuracy</span></div>
+    </article>
 
-    <div class="theme" style="--th:var(--c4)">
-      <div class="theme-head reveal"><span class="theme-tag">Theme IV</span><span class="theme-name">Multimodal &amp; Foundation Models for Biomedical Systems</span></div>
-      <div class="stagger">
-        <div class="pub">
-          <div class="pub-idx">11</div>
-          <div>
-            <div class="pub-title"><a href="https://openreview.net/forum?id=iEqXL74TV4" target="_blank" rel="noopener">Artificial Intelligence for Spatial Transcriptomics: A Scoping Review of Architectures and Models</a></div>
-            <div class="pub-meta"><span class="venue">NeurIPS 2025 Workshop &middot; Imageomics</span><span class="status">Published</span></div>
-            <div class="pub-authors"><span class="self">A. Saini</span>, S. Gandotra, A. Kumar, P. Dutta, T. Ghosal</div>
-            <div class="pub-abs">A systematic map of 40+ deep learning frameworks for spatial transcriptomics, organized by the biological tasks their representations serve and the open road toward foundation models for spatial biology.</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-idx">12</div>
-          <div>
-            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11383655" target="_blank" rel="noopener">WellGuide: Bridging AI and Medicine with Biomedical LLMs for Enhanced Health Support</a></div>
-            <div class="pub-meta"><span class="venue">ICPDCSDT 2025</span><span class="status">Published</span></div>
-            <div class="pub-authors">S. Sharma, <span class="self">A. Saini</span></div>
-            <div class="pub-abs">A healthcare support system built on BioMedGPT, weaving clinical NER, conversational memory, and structured patient workspaces into a privacy-conscious biomedical assistant.</div>
-          </div>
-        </div>
+    <article class="pub card" data-t="0">
+      <h3><a href="https://doi.org/10.1109/ICTACS62700.2024.10840895" target="_blank" rel="noopener">Cross-Domain Knowledge Adaptation Using Iterative Scaling and Language Models</a></h3>
+      <div class="pub-meta"><span class="venue">ICTACS 2024 &middot; IEEE</span><span class="status">&middot; Published</span></div>
+      <div class="authors">R. K. Singh, P. Sinha, <span class="self">A. Saini</span>, M. K. Sachan</div>
+      <div class="abs">A cross-domain opinion-mining model that isolates and transfers domain-invariant sentiment signals, using tf-idf separation and iterative scaling to bridge source and target under scarce annotation.</div>
+      <div class="metrics"><span>81.05% accuracy</span></div>
+    </article>
+
+    <article class="pub card" data-t="1">
+      <h3><a href="https://link.springer.com/article/10.1007/s44163-025-00464-w" target="_blank" rel="noopener">Forecasting Gold Price using Hybrid Deep Neural Network LSTM-Autoencoder</a></h3>
+      <div class="pub-meta"><span class="venue">Discover AI &middot; Springer</span><span class="status">&middot; Published &middot; 2025</span></div>
+      <div class="authors"><span class="self">A. Saini</span>, R. K. Singh, P. Sinha</div>
+      <div class="abs">A hybrid LSTM-Autoencoder trained on 24 years of market data captures long-horizon structure while suppressing overfitting, outperforming LSTM, CNN, and LSTM-CNN baselines across the board.</div>
+    </article>
+
+    <article class="pub card" data-t="1">
+      <h3><a href="https://doi.org/10.1109/OTCON65728.2025.11070792" target="_blank" rel="noopener">Performance Evaluation of Machine and Hybrid Deep Learning Models for Bitcoin Value Forecasting</a></h3>
+      <div class="pub-meta"><span class="venue">IEEE OTCON 2025</span><span class="status">&middot; Published</span></div>
+      <div class="authors"><span class="self">A. Saini</span>, R. K. Singh, T. Choudhury, V. Jain</div>
+      <div class="abs">A rigorous benchmark of tree ensembles against deep models for minute-wise Bitcoin forecasting, isolating the decisive role of feature engineering on structured financial data.</div>
+      <div class="metrics"><span>MAE 14.11</span><span>R&sup2; 0.99998</span></div>
+    </article>
+
+    <article class="pub card" data-t="1">
+      <h3><a href="https://doi.org/10.1109/ICECET61485.2024.10698514" target="_blank" rel="noopener">Financial Time Series Prediction on Apple Stocks Using Machine and Deep Learning Models</a></h3>
+      <div class="pub-meta"><span class="venue">IEEE ICECET 2024</span><span class="status">&middot; Published</span></div>
+      <div class="authors"><span class="self">A. Saini</span>, N. Singh, R. K. Singh, M. K. Sachan</div>
+      <div class="abs">Linear Regression, CNN, and LSTM contrasted on Apple stock data, mapping the real trade-off between temporal expressivity and interpretability in live forecasting.</div>
+    </article>
+
+    <article class="pub card" data-t="1">
+      <h3><a href="https://ieeexplore.ieee.org/abstract/document/11368137" target="_blank" rel="noopener">A Hybrid Wavelet-GNN-LSTM Framework for Cryptocurrency Forecasting</a></h3>
+      <div class="pub-meta"><span class="venue">IEEE CICN 2025</span><span class="status">&middot; Published</span></div>
+      <div class="authors"><span class="self">A. Saini</span>, R. K. Singh, P. Sinha</div>
+      <div class="abs">Wavelet decomposition, graph neural networks for inter-asset structure, and LSTM temporal modeling combine into a single pipeline for forecasting volatile, coupled crypto markets.</div>
+      <div class="metrics"><span>F1 0.9671</span><span>R&sup2; 0.9996</span></div>
+    </article>
+
+    <article class="pub card" data-t="2">
+      <h3><a href="https://www.sciencedirect.com/science/article/pii/S0006497125053200" target="_blank" rel="noopener">Field-Level Visual Explanations for Leukocyte Classification: Interpretability in Peripheral Smear Diagnostics</a></h3>
+      <div class="pub-meta"><span class="venue">ASH Annual Meeting 2025</span><span class="status">&middot; Published</span></div>
+      <div class="authors">M. Saini, <span class="self">A. Saini</span>, J. S. Negi, S. S. M. Vemula</div>
+      <div class="abs">A MobileNetV2 classifier for full-field peripheral smears, augmented with Grad-CAM, LIME, and Occlusion Sensitivity so every prediction traces back to clinically meaningful morphology.</div>
+      <div class="metrics"><span>97% mean accuracy</span></div>
+    </article>
+
+    <article class="pub card" data-t="2">
+      <h3><a href="https://ieeexplore.ieee.org/abstract/document/11410826" target="_blank" rel="noopener">Automated Diagnosis of PCOS: A Deep Learning Approach Using Ultrasound Data</a></h3>
+      <div class="pub-meta"><span class="venue">Global AI Summit 2025</span><span class="status">&middot; Published</span></div>
+      <div class="authors">C. Gupta, L. Agarwal, S. Sharma, R. K. Singh, <span class="self">A. Saini</span>, J. S. Negi</div>
+      <div class="abs">PCause pairs GAN-based synthesis, PCA reduction, and DenseNet-121, then ships as a cross-platform app for early, scalable PCOS screening in underserved settings.</div>
+      <div class="metrics"><span>93.4% test accuracy</span></div>
+    </article>
+
+    <article class="pub card" data-t="2">
+      <h3><a href="https://ascopubs.org/doi/abs/10.1200/JCO.2026.44.16_suppl.e23543" target="_blank" rel="noopener">Uncertainty-Aware Multimodal Imaging for Lung Metastasis Risk Stratification in Extremity Soft-Tissue Sarcoma</a></h3>
+      <div class="pub-meta"><span class="venue">ASCO Annual Meeting 2026</span><span class="status">&middot; Published</span></div>
+      <div class="authors">M. Saini, <span class="self">A. Saini</span>, E. Cambria</div>
+      <div class="abs">MRI and FDG-PET fused at the representation level with Monte Carlo dropout uncertainty; deferring the least-certain cases measurably lifts retained accuracy in rare-cancer decision support.</div>
+    </article>
+
+    <article class="pub card" data-t="3">
+      <h3><a href="https://openreview.net/forum?id=iEqXL74TV4" target="_blank" rel="noopener">Artificial Intelligence for Spatial Transcriptomics: A Scoping Review of Architectures and Models</a></h3>
+      <div class="pub-meta"><span class="venue">NeurIPS 2025 Workshop &middot; Imageomics</span><span class="status">&middot; Published</span></div>
+      <div class="authors"><span class="self">A. Saini</span>, S. Gandotra, A. Kumar, P. Dutta, T. Ghosal</div>
+      <div class="abs">A systematic map of 40+ deep learning frameworks for spatial transcriptomics, organized by the biological tasks their representations serve and the open road toward foundation models for spatial biology.</div>
+    </article>
+
+    <article class="pub card" data-t="3">
+      <h3><a href="https://ieeexplore.ieee.org/abstract/document/11383655" target="_blank" rel="noopener">WellGuide: Bridging AI and Medicine with Biomedical LLMs for Enhanced Health Support</a></h3>
+      <div class="pub-meta"><span class="venue">ICPDCSDT 2025</span><span class="status">&middot; Published</span></div>
+      <div class="authors">S. Sharma, <span class="self">A. Saini</span></div>
+      <div class="abs">A healthcare support system built on BioMedGPT, weaving clinical NER, conversational memory, and structured patient workspaces into a privacy-conscious biomedical assistant.</div>
+    </article>
+
+  </div>
+
+  <!-- UPCOMING PAPERS: kept separate from published work.
+       Add or remove an <li class="review-item"> and every count on the page updates itself.
+       data-short is the status the chat guide uses. -->
+  <div class="review-box px" id="under-review">
+    <div class="review-head">
+      <div>
+        <div class="review-label">Side quests in progress</div>
+        <h3 class="review-title">Upcoming Papers <span class="review-count" id="reviewCount">3</span></h3>
       </div>
+      <div class="review-note">Full papers and links go up as soon as they are out.</div>
     </div>
+    <ol class="review-list">
+      <li class="review-item" data-short="presented at the 3rd Global AI Summit 2026 (IEEE), paper up soon"><span class="rv-n"></span><span class="rv-body"><span class="rv-t">Adaptive Multi-Agent Business Intelligence: An Empirical Study on Retail Transaction Data</span><span class="rv-v">3rd Global AI Summit 2026 &middot; IEEE</span></span><span class="rv-s">Presented &middot; paper soon</span></li>
+      <li class="review-item" data-short="accepted for presentation at IEEE UPCON 2026"><span class="rv-n"></span><span class="rv-body"><span class="rv-t">A Hybrid Explainable Framework for Customer Churn Prediction Across Banking, Telecom, and E-Commerce Domains</span><span class="rv-v">IEEE UPCON 2026</span></span><span class="rv-s">Accepted</span></li>
+      <li class="review-item" data-short="submitted to an IEEE conference"><span class="rv-n"></span><span class="rv-body"><span class="rv-t">Measuring Emotional Information in Conversational Latent Spaces Using Information Theory</span><span class="rv-v">IEEE Conference</span></span><span class="rv-s">Submitted</span></li>
+    </ol>
+  </div>
+
+  <div class="ask-callout">
+    <img class="pixel" src="assets/avatar.png" alt="">
+    <div>
+      <div class="ask-h">Got a question about a paper?</div>
+      <div class="ask-p">Ask me anything about the papers on this page.</div>
+    </div>
+    <button class="btn primary sm" type="button" data-chat-open>Ask me</button>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">03</span><div><div class="sec-title">Projects</div></div></div>
-    <div class="proj-grid stagger">
-      <a class="proj tilt" href="https://github.com/Agampreet25/aurumpulse-insights" target="_blank" rel="noopener">
-        <div class="proj-name">AurumPulse Insights <span class="arw">&rarr;</span></div>
-        <div class="proj-desc">An emotion-aware gold-price forecasting tool. LSTM + Autoencoder predictions layered with buyer/seller sentiment logic, real-time input, and a Dockerized inference API. Copyright granted under the UPES IP Cell.</div>
-        <div class="proj-stack"><span class="chip">TensorFlow</span><span class="chip">Flask</span><span class="chip">Docker</span><span class="chip">Chart.js</span></div>
-      </a>
-      <a class="proj tilt" href="https://github.com/Agampreet25/chef-code" target="_blank" rel="noopener">
-        <div class="proj-name">Chef&rsquo;s Code <span class="arw">&rarr;</span></div>
-        <div class="proj-desc">An educational compiler that teaches C through cooking metaphors &mdash; macros like <span class="mono">mix()</span> and <span class="mono">bake()</span> compile to GCC-ready C. Full parser, symbol table, and code generation behind a live Flask UI. Registered under the UPES IP Cell.</div>
-        <div class="proj-stack"><span class="chip">C</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">GCC</span></div>
-      </a>
-      <a class="proj tilt" href="https://github.com/Agampreet25/apple-stocks" target="_blank" rel="noopener">
-        <div class="proj-name">iPredict <span class="arw">&rarr;</span></div>
-        <div class="proj-desc">An Apple stock forecaster on Linear Regression and LSTM, with trend decomposition, time-series preprocessing, and feature engineering evaluated on RMSE and MAE.</div>
-        <div class="proj-stack"><span class="chip">Scikit-learn</span><span class="chip">Keras</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span></div>
-      </a>
-      <a class="proj tilt" href="https://github.com/Agampreet25" target="_blank" rel="noopener">
-        <div class="proj-name">More on GitHub <span class="arw">&rarr;</span></div>
-        <div class="proj-desc">Additional experiments across forecasting, interpretable NLP, and applied deep learning. Browse the full set of repositories.</div>
-        <div class="proj-stack"><span class="chip">@Agampreet25</span></div>
-      </a>
-    </div>
+<section id="projects" class="wrap">
+  <div class="sec-head"><span class="n">03</span><h2>Inventory &middot; Projects</h2></div>
+  <div class="projects">
+    <a class="proj card" href="https://github.com/Agampreet25/aurum-pulse" target="_blank" rel="noopener">
+      <div class="gem" style="background:var(--t1)"></div>
+      <div class="name">AurumPulse Insights</div>
+      <div class="desc">An emotion-aware gold-price forecasting tool. LSTM + Autoencoder predictions layered with buyer/seller sentiment logic, real-time input, and a Dockerized inference API. Copyright granted under the UPES IP Cell.</div>
+      <div class="chips"><span>TensorFlow</span><span>Flask</span><span>Docker</span><span>Chart.js</span></div>
+    </a>
+    <a class="proj card" href="https://github.com/Agampreet25/chef-code" target="_blank" rel="noopener">
+      <div class="gem" style="background:var(--t0)"></div>
+      <div class="name">Chef&rsquo;s Code</div>
+      <div class="desc">An educational compiler that teaches C through cooking metaphors, with macros like mix() and bake() compile to GCC-ready C. Full parser, symbol table, and code generation behind a live Flask UI. Registered under the UPES IP Cell.</div>
+      <div class="chips"><span>C</span><span>Python</span><span>Flask</span><span>GCC</span></div>
+    </a>
+    <a class="proj card" href="https://github.com/Agampreet25/apple-stocks" target="_blank" rel="noopener">
+      <div class="gem" style="background:var(--t2)"></div>
+      <div class="name">iPredict</div>
+      <div class="desc">An Apple stock forecaster on Linear Regression and LSTM, with trend decomposition, time-series preprocessing, and feature engineering evaluated on RMSE and MAE.</div>
+      <div class="chips"><span>Scikit-learn</span><span>Keras</span><span>Pandas</span><span>Matplotlib</span></div>
+    </a>
+    <a class="proj card" href="https://github.com/Agampreet25" target="_blank" rel="noopener">
+      <div class="gem" style="background:var(--t3)"></div>
+      <div class="name">More on GitHub</div>
+      <div class="desc">Additional experiments across forecasting, interpretable NLP, and applied deep learning. Browse the full set of repositories.</div>
+      <div class="chips"><span>@Agampreet25</span></div>
+    </a>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">04</span><div><div class="sec-title">Experience &amp; Mentorship</div></div></div>
-    <div class="stagger">
-      <div class="exp">
-        <div class="exp-when">Nov 2024 &ndash; Present</div>
-        <div>
-          <div class="exp-role">Undergraduate Research Mentor</div>
-          <div class="exp-org">Independent Academic Mentorship</div>
-          <div class="exp-desc">Guide undergraduates through the full research lifecycle &mdash; problem formulation, literature review, experimental design, implementation, and scientific writing. Several of these collaborations have become published papers.</div>
-        </div>
+<section id="experience" class="wrap">
+  <div class="sec-head"><span class="n">04</span><h2>Quest Log &middot; Experience</h2></div>
+  <div class="quests">
+    <div class="quest px">
+      <div class="when">Nov 2026 &ndash; Present<span>Remote</span></div>
+      <div class="body">
+        <div class="role">Founder</div>
+        <div class="org"><a class="lab-link" data-lab-link href="#">Symbianthro Labs</a> <span class="soon" data-lab-soon>&middot; site coming soon</span></div>
+        <ul class="desc">
+          <li>Founded an independent research lab that grew out of hands-on student mentorship, built to bridge the gap between students who want to do research and the mentors who can guide them.</li>
+          <li>Carries forward a mentorship track record of 10+ undergraduate researchers and 8+ interdisciplinary projects, with several collaborations reaching peer-reviewed publication.</li>
+        </ul>
       </div>
-      <div class="exp">
-        <div class="exp-when">Jun 2025 &ndash; Jul 2025</div>
-        <div>
-          <div class="exp-role">ML &amp; Data Science Intern</div>
-          <div class="exp-org">Groove Innovations &middot; Remote</div>
-          <div class="exp-desc">Led AutoETL, an ML-powered pipeline carrying live web data all the way to dashboard insight &mdash; real-time ETL, forecasting, and interactive Tableau dashboards. Directed a cross-functional team building an Agentic AI decision pipeline.</div>
-        </div>
+    </div>
+    <div class="quest px">
+      <div class="when">Oct 2025 &ndash; Present<span>Remote</span></div>
+      <div class="body">
+        <div class="role">Research Intern &middot; Sentic Team</div>
+        <div class="org">Nanyang Technological University (SenticNet)</div>
+        <ul class="desc">
+          <li>Conducting research under Prof. Erik Cambria in NLP, sentiment analysis, and affective computing, focusing on emotion modelling, sentiment understanding, and computational analysis of emotional and semantic information in language.</li>
+        </ul>
       </div>
-      <div class="exp">
-        <div class="exp-when">2023 &ndash; 2024</div>
-        <div>
-          <div class="exp-role">Community &amp; Outreach</div>
-          <div class="exp-org">Chahak Foundation &middot; Lions Club</div>
-          <div class="exp-desc">Coordinated volunteer teams across educational outreach, women&rsquo;s empowerment, and farmer-welfare programs, and supported environmental initiatives reaching 200+ beneficiaries.</div>
-        </div>
+    </div>
+    <div class="quest px">
+      <div class="when">Sep 2026 &ndash; Present<span>Remote</span></div>
+      <div class="body">
+        <div class="role">NLP Engineer</div>
+        <div class="org">Moleculyst &middot; Internship</div>
+        <ul class="desc">
+          <li>Working on NLP and LLM-based research problems, with a focus on agentic systems, multi-step reasoning, and improving the reliability and interpretability of model outputs.</li>
+          <li>Exploring pilot implementations of AI research workflows, including information retrieval, semantic and graph-based representations, and methods for preserving relevant information across reasoning stages.</li>
+          <li>Bringing linguistic structure such as ontology, semantics, and morphology into LLM pipelines to make their reasoning and outputs more consistent and deterministic.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quest px">
+      <div class="when">Oct 2023 &ndash; Dec 2026<span>Dehradun, India</span></div>
+      <div class="body">
+        <div class="role">Research Mentor &amp; Project Lead</div>
+        <div class="org">Independent Undergraduate Research Mentorship, UPES</div>
+        <ul class="desc">
+          <li>Mentored 10+ undergraduate researchers in machine learning and NLP, supporting research from ideation to publication and conference submission.</li>
+          <li>Coordinated 8+ interdisciplinary research projects across academia and healthcare, managing technical execution and project delivery.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quest px">
+      <div class="when">Jun 2025 &ndash; Jul 2025</div>
+      <div class="body">
+        <div class="role">ML &amp; Data Science Intern</div>
+        <div class="org">Groove Innovations &middot; Remote</div>
+        <div class="desc">Led AutoETL, an ML-powered pipeline carrying live web data all the way to dashboard insight through real-time ETL, forecasting, and interactive Tableau dashboards. Directed a cross-functional team building an Agentic AI decision pipeline.</div>
+      </div>
+    </div>
+    <div class="quest px">
+      <div class="when">2023 &ndash; 2024</div>
+      <div class="body">
+        <div class="role">Community &amp; Outreach</div>
+        <div class="org">Chahak Foundation &middot; Lions Club</div>
+        <div class="desc">Coordinated volunteer teams across educational outreach, women&rsquo;s empowerment, and farmer-welfare programs, and supported environmental initiatives reaching 200+ beneficiaries.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">05</span><div><div class="sec-title">Technical Toolkit</div></div></div>
-    <div class="skill-grid stagger">
-      <div><div class="sk-cat">Languages</div><div class="sk-items">Python &middot; C &middot; JavaScript &middot; HTML/CSS &middot; SQL</div></div>
-      <div><div class="sk-cat">ML &amp; DL Frameworks</div><div class="sk-items">PyTorch &middot; TensorFlow &middot; Scikit-learn &middot; Transformers &middot; NLTK &middot; spaCy</div></div>
-      <div><div class="sk-cat">Data &amp; Tooling</div><div class="sk-items">NumPy &middot; Pandas &middot; Matplotlib &middot; Seaborn &middot; Tableau &middot; Jupyter &middot; Flask</div></div>
-      <div><div class="sk-cat">Systems &amp; Workflow</div><div class="sk-items">Git &middot; GitHub &middot; Docker &middot; Node.js &middot; VS Code</div></div>
-      <div><div class="sk-cat">Core Methods</div><div class="sk-items">Time-Series Forecasting &middot; Feature Engineering &middot; Explainable AI &middot; Domain Adaptation &middot; Uncertainty Quantification</div></div>
-      <div><div class="sk-cat">Research</div><div class="sk-items">Experimental Design &middot; Scientific Writing &middot; Literature Review &middot; Research Mentorship</div></div>
-    </div>
+<section id="skills" class="wrap">
+  <div class="sec-head"><span class="n">05</span><h2>Skill Tree</h2></div>
+  <div class="skills">
+    <div class="skill px"><div class="cat">Languages</div><div class="items"><span>Python</span><span>C</span><span>JavaScript</span><span>HTML/CSS</span><span>SQL</span></div></div>
+    <div class="skill px"><div class="cat">ML &amp; DL Frameworks</div><div class="items"><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>Transformers</span><span>NLTK</span><span>spaCy</span></div></div>
+    <div class="skill px"><div class="cat">Data &amp; Tooling</div><div class="items"><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Tableau</span><span>Jupyter</span><span>Flask</span></div></div>
+    <div class="skill px"><div class="cat">Systems &amp; Workflow</div><div class="items"><span>Git</span><span>GitHub</span><span>Docker</span><span>Node.js</span><span>VS Code</span></div></div>
+    <div class="skill px"><div class="cat">Core Methods</div><div class="items"><span>Time-Series Forecasting</span><span>Feature Engineering</span><span>Explainable AI</span><span>Domain Adaptation</span><span>Uncertainty Quantification</span></div></div>
+    <div class="skill px"><div class="cat">Research</div><div class="items"><span>Experimental Design</span><span>Scientific Writing</span><span>Literature Review</span><span>Research Mentorship</span></div></div>
   </div>
 </section>
 
 <footer id="contact">
-  <div class="wrap">
-    <div class="foot-grid reveal">
-      <div>
-        <div class="foot-h">Let&rsquo;s find the structure<br>in something <em>new.</em></div>
-        <div class="foot-links">
-          <a href="mailto:agampreet342@gmail.com">Email</a>
-          <a href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
-          <a href="https://www.linkedin.com/in/agampreet-saini-99a529342/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/Agampreet25" target="_blank" rel="noopener">GitHub</a>
-        </div>
+  <div class="wrap foot">
+    <div style="flex:999 1 480px;min-width:0">
+      <div class="foot-h">Let&rsquo;s find the structure<br>in something <em>new.</em></div>
+      <div class="foot-links">
+        <a class="btn primary sm" href="mailto:agampreet342@gmail.com">Email</a>
+        <a class="btn sm" href="https://scholar.google.com/citations?user=vXO4BAkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        <a class="btn sm" href="https://www.linkedin.com/in/agampreet-saini-99a529342/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn sm" href="https://github.com/Agampreet25" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn sm" href="https://medium.com/@agampreet342" target="_blank" rel="noopener">Medium</a>
+        <a class="btn sm" data-lab-link href="#">Symbianthro Labs</a>
       </div>
-      <div class="mono" style="text-align:right; color:var(--slate); font-size:12px;">AS<br>Chandigarh, IN</div>
     </div>
-    <div class="colophon">&copy; 2026 Agampreet Saini &middot; Designed &amp; built with intent</div>
+    <div class="meta">&copy; 2026 Agampreet Saini<br>Game over? Never.</div>
   </div>
 </footer>
+
+<!-- pixel guide chat. Scripted, runs entirely in the browser, no server and no API keys -->
+<div class="chat px" id="chat" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+  <div class="chat-head">
+    <img class="pixel" src="assets/avatar.png" alt="">
+    <div class="chat-id">
+      <div id="chatTitle" class="chat-name">Pixel Agampreet</div>
+      <div class="chat-sub"><i></i>Research guide &middot; beta</div>
+    </div>
+    <button class="chat-x" type="button" id="chatClose" aria-label="Close chat">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M2 2h2v2h2v2h4V4h2V2h2v2h-2v2h-2v4h2v2h2v2h-2v-2h-2v-2H6v2H4v2H2v-2h2v-2h2V6H4V4H2z" fill="currentColor"/></svg>
+    </button>
+  </div>
+  <div class="chat-beta">Still under development. My answers are pre-written, so I might not know everything yet, but feel free to try me out!</div>
+  <div class="chat-log" id="chatLog" aria-live="polite"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <form class="chat-form" id="chatForm" autocomplete="off">
+    <label for="chatInput" class="sr-only">Ask about the research</label>
+    <input id="chatInput" type="text" maxlength="200" placeholder="Ask about a paper, a topic, or the lab">
+    <button class="btn primary xs" type="submit">Send</button>
+  </form>
+</div>
+
+<!-- wandering pixel avatar -->
+<div class="walker" id="walker" data-walk="0">
+  <div class="bubble" id="bubble" hidden></div>
+  <button id="avatarBtn" aria-label="Open the research chat with pixel Agampreet" aria-controls="chat"><div class="sprite"></div></button>
+  <div class="shadow"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
